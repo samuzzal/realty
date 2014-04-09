@@ -1,0 +1,59 @@
+<Head>
+<Title>Insert Data</Title>
+</Head>
+
+<Body>
+	<form action="insert.php" method="post">
+	<Table width="900">
+		<Tr>
+			<th width="35%">Propery Type</th>
+			<td>
+				<input type="radio" name="proptype"/> Plot &nbsp;&nbsp;
+				<input type="radio" name="proptype"/> Individual House &nbsp;&nbsp;
+				<input type="radio" name="proptype"/> Apartment<BR>
+			</td>
+		</Tr>
+		<Tr>
+			<th>Rate</th>
+			<td><input type="text" name="rate"/> </td>
+		</Tr>
+		<Tr>
+			<th>Area</th>
+			<td><input type="text" name="area"/> </td>
+		</Tr>
+		<Tr>
+			<th>Dimension</th>
+			<td><input type="text" name="dimension"/> </td>
+		</Tr>
+		<Tr>
+			<th>Locality</th>
+			<td><input type="text" name="locality"/> </td>
+		</Tr>
+		<Tr>
+			<th>City</th>
+			<td><input type="text" name="city"/> </td>
+		</Tr>
+		<Tr>
+			<th>Description</th>
+			<td><textarea rows=4 cols=50 name="description"></textarea></td>
+		</Tr>
+		<Tr>
+			<th>Distance from City</th>
+			<td><input type="text" name="distance_from_city"/> </td>
+		</Tr>
+		<Tr>
+			<th>Sinte number</th>
+			<td><input type="text" name="sinte"/></td>
+		</Tr>
+		<Tr>
+			<th>Corner</th>
+			<td><input type="text" name="corner"/></td>
+		</Tr>
+		<Tr>
+			<th>Picture</th>
+			<td><input type="file" name="picture"/></td>
+		</Tr>
+		<Tr><td colspan=2 align="center"><BR><BR><input type="submit" value="Insert Property"/></td></tr>
+	</Table>
+	</form>
+</Body>

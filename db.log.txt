@@ -1,0 +1,169 @@
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 1
+Server version: 5.5.37 MySQL Community Server (GPL)
+
+Copyright (c) 2000, 2013, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql>
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| school             |
+| test               |
++--------------------+
+5 rows in set (0.11 sec)
+
+mysql> create database realty;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> connect realty
+Connection id:    2
+Current database: realty
+
+mysql>
+mysql> show tables;
+Empty set (0.00 sec)
+
+mysql>
+mysql> create table prop_info (
+    -> id int primary key,
+    -> prop_type enum ('plot','ind_house','apartment'),
+    -> rate float(12,2),
+    -> area float(12,2),
+    -> dimension varchar(10),
+    -> locality varchar(100),
+    -> city varchar(50),
+    -> description varchar(1024),
+    -> distance_from_city int,
+    -> sinte_no int,
+    -> site-image mediumblob
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that
+corresponds to your MySQL server version for the right syntax to use near '-imag
+e mediumblob
+)' at line 12
+mysql> create table prop_info (
+    -> id int primary key,
+    -> prop_type enum ('plot','ind_house','apartment'),
+    -> rate float(12,2),
+    ->  area float(12,2),
+    ->  dimension varchar(10),
+    -> locality varchar(100),
+    -> city varchar(50),
+    -> description varchar(1024),
+    ->  distance_from_city int,
+    -> sinte_no int,
+    -> corner char(1)
+    -> );
+Query OK, 0 rows affected (0.19 sec)
+
+mysql> show tables;
++------------------+
+| Tables_in_realty |
++------------------+
+| prop_info        |
++------------------+
+1 row in set (0.00 sec)
+
+mysql> desc prop_info;
++--------------------+--------------------------------------+------+-----+------
+---+-------+
+| Field              | Type                                 | Null | Key | Defau
+lt | Extra |
++--------------------+--------------------------------------+------+-----+------
+---+-------+
+| id                 | int(11)                              | NO   | PRI | NULL
+   |       |
+| prop_type          | enum('plot','ind_house','apartment') | YES  |     | NULL
+   |       |
+| rate               | float(12,2)                          | YES  |     | NULL
+   |       |
+| area               | float(12,2)                          | YES  |     | NULL
+   |       |
+| dimension          | varchar(10)                          | YES  |     | NULL
+   |       |
+| locality           | varchar(100)                         | YES  |     | NULL
+   |       |
+| city               | varchar(50)                          | YES  |     | NULL
+   |       |
+| description        | varchar(1024)                        | YES  |     | NULL
+   |       |
+| distance_from_city | int(11)                              | YES  |     | NULL
+   |       |
+| sinte_no           | int(11)                              | YES  |     | NULL
+   |       |
+| corner             | char(1)                              | YES  |     | NULL
+   |       |
++--------------------+--------------------------------------+------+-----+------
+---+-------+
+11 rows in set (0.04 sec)
+
+mysql> alter table prop_info
+    -> add site_picture mediumblob;
+Query OK, 0 rows affected (0.30 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc prop_info;
++--------------------+--------------------------------------+------+-----+------
+---+-------+
+| Field              | Type                                 | Null | Key | Defau
+lt | Extra |
++--------------------+--------------------------------------+------+-----+------
+---+-------+
+| id                 | int(11)                              | NO   | PRI | NULL
+   |       |
+| prop_type          | enum('plot','ind_house','apartment') | YES  |     | NULL
+   |       |
+| rate               | float(12,2)                          | YES  |     | NULL
+   |       |
+| area               | float(12,2)                          | YES  |     | NULL
+   |       |
+| dimension          | varchar(10)                          | YES  |     | NULL
+   |       |
+| locality           | varchar(100)                         | YES  |     | NULL
+   |       |
+| city               | varchar(50)                          | YES  |     | NULL
+   |       |
+| description        | varchar(1024)                        | YES  |     | NULL
+   |       |
+| distance_from_city | int(11)                              | YES  |     | NULL
+   |       |
+| sinte_no           | int(11)                              | YES  |     | NULL
+   |       |
+| corner             | char(1)                              | YES  |     | NULL
+   |       |
+| site_picture       | mediumblob                           | YES  |     | NULL
+   |       |
++--------------------+--------------------------------------+------+-----+------
+---+-------+
+12 rows in set (0.01 sec)
+
+mysql> create table login (
+    -> userid varchar(25) primary key,
+    -> password varchar(15) not null
+    -> );
+Query OK, 0 rows affected (0.06 sec)
+
+mysql> insert login values ('admin','admin');
+Query OK, 1 row affected (0.13 sec)
+
+mysql> select * from login;
++--------+----------+
+| userid | password |
++--------+----------+
+| admin  | admin    |
++--------+----------+
+1 row in set (0.00 sec)
+
+mysql>
