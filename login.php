@@ -28,7 +28,7 @@
 	
 	if (($admin_username==$db_username) and ($admin_password==$db_password)) {
 		print "<H2>Success!</H2>";
-		header ("Location: http://localhost/real-estate/index.html");
+		header ("Location: http://localhost/realty/insertdata.html");
 	}
 	else {
 		print "<font color='red'><H2>Failure!</H2></font>";
