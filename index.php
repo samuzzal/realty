@@ -82,14 +82,6 @@
 				print "<img src=data/$site_picture title=\"<strong>$prop_type in $city</strong> <span>$dimension SQ Feet site</span>  &nbsp; &nbsp; &nbsp; <a href=getrecords.php?name=$site_picture>Read More</a>\"\>";
 			}
 		  ?>
-			
-			<!--img src="data/IMG_20140303_120926.jpg" title="<strong>Independent House in Mysore</strong> <span>30x40 SQ Feet Site</span> &nbsp; &nbsp; &nbsp;  <a href='getrecords.php?name=IMG_20140303_120926.jpg'>Read More</a>"/>
-			<img src="images/shesh1.gif" width="200" height="100"   alt="" title="<strong>Villa Neverland, 2006</strong><span>9 rooms, 3 baths, 6 beds, building size: 5000 sq. ft. &nbsp; &nbsp; &nbsp; Price: $ 600 000 &nbsp; &nbsp; &nbsp; <a href='#'>Read more</a></span>"> 
-			<img src="images/shesh2.gif" width="200" height="100"   alt="" title="<strong>Villa Lipsum, 2008</strong><span>8 rooms, 4 baths, 4 beds, building size: 4500 sq. ft. &nbsp; &nbsp; &nbsp; Price: $ 500 000 &nbsp; &nbsp; &nbsp; <a href='#'>Read more</a></span>"> 
-			<img src="images/shesh3.jpg" width="200" height="100"   alt="" title="<strong>Villa Dolor Sid, 2007</strong><span>11 rooms, 3 baths, 5 beds, building size: 6000 sq. ft. &nbsp; &nbsp; &nbsp; Price: $ 650 000 &nbsp; &nbsp; &nbsp; <a href='#'>Read more</a></span>">
-			<img src="images/shesh4.jpg" width="200" height="100"   alt="" title="<strong>Villa Nemo Enim, 2010</strong><span>5 rooms, 2 baths, 4 beds, building size: 3000 sq. ft. &nbsp; &nbsp; &nbsp; Price: $ 400 000 &nbsp; &nbsp; &nbsp; <a href='#'>Read more</a></span>">
-			<img src="images/shesh5.jpg" width="200" height="100"   alt="" title="<strong>Villa Nam Libero, 2003</strong><span>7 rooms, 4 baths, 6 beds, building size: 7000 sq. ft. &nbsp; &nbsp; &nbsp; Price: $ 700 000 &nbsp; &nbsp; &nbsp; <a href='#'>Read more</a></span>">
-			<img src="images/shesh6.jpg" width="200" height="100"   alt="" title="<strong>Villa Nam Libero, 2003</strong><span>7 rooms, 4 baths, 6 beds, building size: 7000 sq. ft. &nbsp; &nbsp; &nbsp; Price: $ 700 000 &nbsp; &nbsp; &nbsp; <a href='#'>Read more</a></span>"-->
 		  </div>
         </article>
         <article class="col2">
@@ -103,7 +95,7 @@
                 </select>
               </div>
               <div class="row_select"> Search Area:<br>
-                <select>
+                <select name='locality'>
                   <option value=''>--Select--</option>
 				  <?php
 
@@ -123,16 +115,16 @@
               </div>
               <div class="row_select">
                 <div class="cols"> Price Range :<br>
-                  <select>
+                  <select name='price'>
                     <option value=''>--Select--</option>
                     <option value='<500000'>&lt; 500000</option>
-                    <option value='500000 and 1499999'>500000-1500000</option>
-                    <option value='1500000 and 2500000'>1500000-2500000</option>
+                    <option value='between 500000 and 1499999'>500000-1500000</option>
+                    <option value='between 1500000 and 2500000'>1500000-2500000</option>
                     <option value='>2500000'>&gt;2500000</option>
                   </select>
                 </div>
                 <div class="cols pad_left1"> Property Type<br>
-                  <select>
+                  <select name='prop_type'>
                     <option value=''>--Select--</option>
                     <option value='plot'>Plot</option>
                     <option value='ind_house'>Independent House</option>
@@ -142,11 +134,11 @@
               </div>
               <div class="row_select">
                 <div class="cols">Area (Sq ft))<br>
-                  <select>
+                  <select name='area'>
                     <option value=''>--Select--</option>
                     <option value='<1000'>&lt; 1000</option>
-                    <option value='1000 and 1999'>1000-1999</option>
-                    <option value='2000 and 2999'>2000-3000</option>
+                    <option value='between 1000 and 1999'>1000-1999</option>
+                    <option value='between 2000 and 2999'>2000-3000</option>
                     <option value='> 3000'>&gt; 3000</option>
                   </select>
                 </div>
@@ -165,6 +157,7 @@
                     <option>...</option>
                     <option>...</option>
                   </select>
+    
                 </div-->
                 <div class="cols pad_left1"> <!--a href="#" class="button">Proposals</a-->
                 	<BR><input type=submit value="Proposals"></input>

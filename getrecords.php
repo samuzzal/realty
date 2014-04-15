@@ -3,7 +3,6 @@
 	$password="";
 	$database="realty";
 	mysql_connect("localhost",$username,$password);
-	
 	@mysql_select_db($database) or die( "Unable to select database");
 ?>
 <Head>
@@ -59,19 +58,70 @@
 
 <?php
 /*Placeholder to form the condition part of the SQL query*/
-$condition = "where";
+$conditions = array();
 
-if ($_GET["name"] != '') {
+if (isset($_GET["name"])) {
 	$site_picture = $_GET["name"];
-	$condition = $condition." site_picture = \"$site_picture\"";
+	$condition = " site_picture = \"$site_picture\"";
+	array_push($conditions,$condition);
+}
+$city = '';
+if (isset($_POST["city"])) {
+	$city = $_POST["city"];
+	if ($city != '') {
+		$condition = "city = \"$city\"";
+		array_push($conditions,$condition);
+	}
+}
+$locality = '';
+if (isset($_POST["locality"])) {
+	$locality = $_POST["locality"];
+	if ($locality != '') {
+		$condition = "locality = \"$locality\"";
+		array_push($conditions,$condition);
+	}
+}
+$price = '';
+if (isset($_POST["price"])) {
+	$price = $_POST['price'];
+	if ($price != '') {
+		$condition = "rate $price";
+		array_push($conditions,$condition);
+	}
+}
+$prop_type = '';
+if (isset($_POST["prop_type"])) {
+	$prop_type = $_POST['prop_type'];
+	if ($prop_type != '') {
+		$condition = "prop_type = \"$prop_type\"";
+		array_push($conditions,$condition);
+	}
+}
+$area = '';
+if (isset($_POST["area"])) {
+	$area = $_POST['area'];
+	if ($area != '') {
+		$condition = "area $area";
+		array_push($conditions,$condition);
+	}
 }
 
-if ($condition == 'where') {
+$condition = 'where ';
+$len = count($conditions);
+for ($i = 0; $i < $len; $i++) {
+	if ($i > 0) {
+		$condition = $condition." and ";
+	}
+	$condition = $condition.$conditions[$i];
+}
+
+if (count($conditions) == 0) {
 	$query = "select * from prop_info";
 }
 else {
 	$query = "select * from prop_info ".$condition;
 }
+
 
 $result=mysql_query($query);
 $num=mysql_numrows($result);
@@ -81,6 +131,7 @@ mysql_close();
 <center>
 <?php
 	$i=0;
+	//print "<h1>$query</h1><BR>\n";
 	while ($i < $num){
 ?>
 	<h4><table style="background-color:Black;color:white" width="700px" border="1" bordercolor="#444444">	
@@ -165,4 +216,14 @@ mysql_close();
 	}
 ?>
 </center>
+
+<?php
+// print "<h1>$conditions[0]</h1><BR>";
+// print "<h1>$conditions[1]</h1><BR>";
+// print "<h1>$conditions[2]</h1><BR>";
+// print "<h1>$conditions[3]</h1><BR>";
+// print "<h1>$conditions[4]</h1><BR>";
+//print "<h1>$conditions[5]</h1><BR>";
+?>
+
 </Body>
