@@ -36,10 +36,10 @@
       <nav>
         <ul id="menu">
           <li id="menu_active"><a href="index.php">Main Page</a></li>
-          <li><a href="buying.html">Buying Estate</a></li>
-          <li><a href="selling.html">Selling Estate</a></li>
-          <li><a href="renting.html">Services</a></li> <!--Counselling/Consult/Finance-->
-          <li><a href="finance.html">Finance</a></li>
+          <li><a href="#">Buying Estate</a></li>
+          <li><a href="#">Selling Estate</a></li>
+          <li><a href="#">Services</a></li> <!--Counselling/Consult/Finance-->
+          <li><a href="#">Finance</a></li>
           <li class="end"><a href="contacts.html">Contact Us</a></li>
         </ul>
       </nav>
