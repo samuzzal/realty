@@ -53,18 +53,21 @@
         <article class="col1">
           <div class="pad2">
             <h2 class="pad_bot1 pad_top1">Contact Form</h2>
-            <form id="ContactForm" action="#">
+            <form id="ContactForm" method="post" action="insertcontact.php">
               <div>
-                <div  class="wrapper"> <span>Your Name:</span>
-                  <input type="text" class="input" >
+                <div  class="wrapper"> <span>Name:</span>
+                  <input type="text" class="input" name="name">
                 </div>
-                <div  class="wrapper"> <span>Your E-mail:</span>
-                  <input type="text" class="input" >
+                <div  class="wrapper"> <span>Telephone No.:</span>
+                  <input type="text" class="input" name="phone">
                 </div>
-                <div  class="textarea_box"> <span>Your Message:</span>
-                  <textarea name="textarea" cols="1" rows="1"></textarea>
+                <div  class="wrapper"> <span>E-mail:</span>
+                  <input type="text" class="input" name="email">
                 </div>
-                <span>&nbsp;</span> <a href="#" class="button">Clear</a> <a href="#" class="button">Send</a> </div>
+                <div  class="textarea_box"> <span>Message:</span>
+                  <textarea cols="1" rows="1" name="message"></textarea>
+                </div>
+                <span>&nbsp;</span> <input type="submit" class="button" value="Send"></input> </div>
             </form>
           </div>
         </article>
